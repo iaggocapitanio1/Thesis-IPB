@@ -1,0 +1,147 @@
+\documentclass[12pt,a4paper,twoside]{ipb}
+
+% comentar caso seja uma disseração de mestrado
+%\usepackage{projei}
+
+\usepackage[english]{babel}
+\graphicspath{{./images/}}
+\usepackage{listings} % incluir listagens
+\usepackage{url} % typeset URL's
+\usepackage[colorlinks=true,
+                    urlcolor=black, %blue
+                    linkcolor=black,
+                    citecolor=black, %cor das citações
+                    bookmarks=true,
+                    pdfstartview=FitH]{hyperref}
+
+% Pode ser usado biblatex
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{lib/refs.bib}
+
+\usepackage{lipsum}
+
+\usepackage{amsmath}
+
+\usepackage{tabulary}
+
+\usepackage{booktabs}
+
+\usepackage{graphicx}
+
+\usepackage{layout}
+
+\usepackage[table]{xcolor}
+
+\usepackage{subfigure}
+
+\usepackage{array}
+
+\usepackage{multirow}
+
+\usepackage{soul}
+
+\usepackage{eurosym}
+
+\usepackage{amsfonts}
+
+
+%\title{Desenvolvimento de um Sistema de Monitorização para Reservatórios para a Santa Casa da Misericórdia de Bragança}
+
+%%\title{Development of an Integrated System for Industrial Laundry at Santa Casa da Misericórdia de Bragança}
+
+%%(jpc)\title{IoT system applied to detergent supervision in industrial washing machines}
+
+\title{\textbf{Development of Traceability Solution for Furniture Components}}
+
+\author{Iaggo Capitanio - 52498}
+%\authnum{1}
+%\secondauthor{Nome do Aluno - Número Mecanográfico}
+%\secauthnum{2}
+
+\supervisor{Prof. Dr. João Paulo Coelho}
+\cosupervisor{Prof. Dr. Luan José Franchini Ferreira }
+
+% Para definir o ano letivo
+\courseyear{2022-2023}
+
+% Para nao mostrar a lista de tabelas
+%\tablespagefalse
+
+\makeglossaries
+\loadglsentries{acronym}
+
+
+%http://tex.stackexchange.com/questions/59572/custom-page-numbering-for-appendix
+\usepackage{etoolbox}
+\usepackage{verbatim}
+
+\begin{document}
+	
+% Coloca a capa, primeira pagina e outros
+
+\beforepreface
+
+%\cleardoublepage
+
+\prefacesection{Dedication}
+\input{chapters/dedicatoria}
+
+%\cleardoublepage
+
+\prefacesection{Acknowledgment}
+\input{chapters/agradecimento}
+
+%\cleardoublepage
+
+\prefacesection{Abstract}
+\input{chapters/abstract}
+
+%\cleardoublepage
+
+\prefacesection{Resumo}
+\input{chapters/resumo}
+
+% Coloca indices
+\afterpreface
+
+\printglossary[type=\acronymtype,title={Acronyms},nonumberlist]
+
+\bodystart
+
+% Capitulos do documento
+\cleardoublepage
+\input{chapters/cap01}
+\cleardoublepage
+\input{chapters/cap02}
+\cleardoublepage
+\input{chapters/cap03}
+\cleardoublepage
+\input{chapters/cap04}
+\cleardoublepage
+\input{chapters/cap05}
+\cleardoublepage
+\input{chapters/cap06}
+
+%% estilo de referências. outros valores posíveis são 'plain' e 'abbrv' apalike
+%\bibliographystyle{plain}
+%% listagem de referências
+%\bibliography{lib/refs}
+
+%  Caso seja usado biblatex
+\printbibliography
+
+% Apêndices
+\appendix
+
+%http://tex.stackexchange.com/questions/59572/custom-page-numbering-for-appendix
+\pretocmd{\chapter}{%
+	\clearpage
+	\pagenumbering{arabic}%
+	\renewcommand*{\thepage}{\thechapter\arabic{page}}%
+}{}{}
+
+\input{chapters/apendice03}
+\input{chapters/apendice01}
+\input{chapters/apendice02}
+
+\end{document}

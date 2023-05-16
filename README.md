@@ -1,1 +1,1 @@
-# Thesis-IPB
+# MSI - Template Latex IPB projecto/dissetração
